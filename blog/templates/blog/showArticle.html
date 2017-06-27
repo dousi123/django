@@ -1,0 +1,39 @@
+<header>
+    <h1>{{ article.name }}</h1>
+</header>
+<section>
+    <div>
+    年龄：{{ article.age }}<br/>
+    生日：{{ article.birth }}<br/>
+    证件类型：{{ article.certificate }}<br/>
+    证件号：{{ article.certificate_id }}<br/>
+    电话号码：{{ article.phone }}<br/>
+    电子邮箱：{{ article.email }}<br/>
+    创建时间：{{ article.pub_date}}<br/>
+    </div>
+    <a href="/">返回首页</a>
+    <ul>
+        {% for edu in edu_all %}
+        <li>
+            学校：{{ edu.school }}
+            <br/>
+            详细信息：{{ edu.infos }}
+            <br/>
+            <a href="/blog/{{ edu.id }}/eduDel">删除</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% if edu_all|length < 5 %}
+    <h2>添加教育/工作信息</h2>
+    <form action="" method="post" id="ArticleFormForAddArticle">
+        学校/公司：
+        <input type="text" name="school" id="school" />
+        <br/><br/>
+        详细信息：
+        <input type="text" name="infos" id="infos" />
+        <br/><br/>
+        {{uf.errors}}<br/>
+        <button type="submit">添加</button>
+    </form>
+    {% endif %}
+</section>

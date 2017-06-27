@@ -1,0 +1,37 @@
+<header>
+	<h1>新增简历</h1>
+</header>
+<section>
+    <form action="" method="post" id="ArticleFormForAddArticle">
+        姓名：
+        <input type="text" name="name" id="name" />
+        <br/><br/>
+        照片：
+        <div class="updateImg">
+            <img src="{{ account.photo.url }}" alt=""/>
+        </div>
+        <input name="photo" type="file" id="exampleInputFile">
+        <br/><br/>
+        年龄：
+        <input type="text" name="age" id="age" />
+        <br/><br/>
+        生日：
+        <input type="text" name="birth" id="birth" />
+        <br/><br/>
+        证件类型：
+        <input type="text" name="certificate" id="certificate" />
+        <br/><br/>
+        证件号：
+        <input type="text" name="certificate_id" id="certificate_id" />
+        <br/><br/>
+        电话号码：
+        <input type="text" name="phone" id="phone" />
+        <br/><br/>
+        电子邮箱：
+        <input type="text" name="email" id="email" />
+        <br/><br/>
+        {{uf.errors}}<br/>
+        <button type="submit">添加</button>
+        <a href="/">返回</a>
+    </form>
+</section>
